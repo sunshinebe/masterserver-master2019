@@ -19,7 +19,9 @@ public class MsfQuickBuild
     /// Build with "Development" flag, so that we can see the console if something 
     /// goes wrong
     /// </summary>
-    public static BuildOptions BuildOptions = BuildOptions.Development;
+    public static BuildOptions BuildOptions = BuildOptions.Development ;
+    //无界面模式
+    public static BuildOptions BuildOptions2 = BuildOptions.EnableHeadlessMode;
 
     public static string PrevPath = null;
 
@@ -63,6 +65,17 @@ public class MsfQuickBuild
         };
         BuildPipeline.BuildPlayer(clientScenes, path + "/Client.exe", TargetPlatform, BuildOptions);
     }
+//
+    public static void BuildAndroidClient(string path)
+    {
+        var clientScenes = new[]
+        {
+            QuickSetupRoot+ "/Scenes/Client.unity",
+            // Add all the game scenes
+            QuickSetupRoot+ "/Scenes/GameLevels/SimplePlatform.unity"
+        };
+        BuildPipeline.BuildPlayer(clientScenes, path + "/Client.apk", BuildTarget.Android, BuildOptions.None);
+    }
 
     /// <summary>
     /// Creates a build for game server
@@ -76,7 +89,7 @@ public class MsfQuickBuild
             // Add all the game scenes
             QuickSetupRoot+"/Scenes/GameLevels/SimplePlatform.unity"
         };
-        BuildPipeline.BuildPlayer(gameServerScenes, path + "/GameServer.exe", TargetPlatform, BuildOptions);
+        BuildPipeline.BuildPlayer(gameServerScenes, path + "/GameServer.exe", TargetPlatform, BuildOptions2);
     }
 
     #region Editor Menu
@@ -108,6 +121,16 @@ public class MsfQuickBuild
         if (!string.IsNullOrEmpty(path))
         {
             BuildGameServer(path);
+        }
+    }
+
+    [MenuItem("Tools/Msf/Build Client Android", false, 11)]
+    public static void BuildClientMenuAndroid()
+    {
+        var path = GetPath();
+        if (!string.IsNullOrEmpty(path))
+        {
+            BuildAndroidClient(path);
         }
     }
 

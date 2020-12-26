@@ -557,6 +557,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224636199372266846, guid: 5b67f1ab43403c049908bcf730f6dc92,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.025024414
+      objectReference: {fileID: 0}
     - target: {fileID: 224684482359343384, guid: 5b67f1ab43403c049908bcf730f6dc92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -860,6 +865,16 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxTimeToConnect
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114509298780526028, guid: 377b961bdc153854193d9d2ce0d03f25,
+        type: 3}
+      propertyPath: ServerIp
+      value: 61341595.51vip.biz
+      objectReference: {fileID: 0}
+    - target: {fileID: 114509298780526028, guid: 377b961bdc153854193d9d2ce0d03f25,
+        type: 3}
+      propertyPath: ServerPort
+      value: 6000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377b961bdc153854193d9d2ce0d03f25, type: 3}

@@ -121,7 +121,7 @@ namespace Barebones.MasterServer
                 {
                     Logger.Debug("Connecting to server at: " + ServerIp +":" + ServerPort);
                 }
-
+                ServerIp = DomainToIp.DoGetHostAddresses(ServerIp);
                 connection.Connect(ServerIp, ServerPort);
 
                 // Give a few seconds to try and connect
