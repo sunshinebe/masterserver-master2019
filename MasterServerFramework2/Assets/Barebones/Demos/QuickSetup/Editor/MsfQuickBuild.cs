@@ -74,7 +74,8 @@ public class MsfQuickBuild
             // Add all the game scenes
             QuickSetupRoot+ "/Scenes/GameLevels/SimplePlatform.unity"
         };
-        BuildPipeline.BuildPlayer(clientScenes, path + "/Client.apk", BuildTarget.Android, BuildOptions.None);
+        BuildPipeline.BuildPlayer(clientScenes, path + "/Client.apk", BuildTarget.Android, BuildOptions.Development);
+        
     }
 
     /// <summary>

@@ -7,7 +7,6 @@ public class DomainToIp : MonoBehaviour
 {
     private void Start()
     {
-       //Debug.Log( DoGetHostAddresses("61341595.51vip.biz"));
         Debug.Log(DoGetHostAddresses("127.0.0.1"));
 
     }
